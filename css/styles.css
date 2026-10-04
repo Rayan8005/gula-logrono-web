@@ -50,3 +50,6 @@
 .hero-video-toggle:hover{background:var(--gula-primary);color:var(--gula-berry)}
 @media(max-width:800px){.hero-video-hero{min-height:calc(100svh - 72px);padding:82px 7vw 110px}.hero-video-hero .hero-copy{width:min(720px,80%)}.hero-video-hero .hero-sticker{top:10%;right:7%;width:92px;height:92px}.hero-video-toggle{right:7vw;bottom:72px}}
 @media(max-width:560px){.hero-video-hero{min-height:min(780px,calc(100svh - 72px));padding:88px 23px 112px;justify-content:flex-start}.hero-video-hero .hero-copy{width:100%;max-width:100%;padding:0}.hero-video-hero h1{font-size:clamp(59px,16vw,86px)}.hero-video-hero .hero-lede{font-size:23px}.hero-video-hero .hero-intro{font-size:13px;max-width:310px}.hero-video{object-position:59% center}.hero-video-scrim{background:linear-gradient(90deg,rgba(13,11,8,.79) 0%,rgba(13,11,8,.51) 65%,rgba(13,11,8,.22) 100%),linear-gradient(0deg,rgba(13,11,8,.6) 0%,transparent 45%)}.hero-video-hero .hero-sticker{top:auto;right:8%;bottom:14%;width:86px;height:86px;font-size:11px}.hero-video-hero .hero-sticker b{font-size:18px}.hero-video-toggle{right:23px;bottom:66px}}
+.card-cheese .card-art{background:var(--gula-accent)}
+.card-cheese .price-badge{left:14px;right:auto}
+@media(max-width:560px){.card-cheese .price-badge{left:8px;right:auto;top:8px}}
