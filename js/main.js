@@ -13,6 +13,22 @@ nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () =
 const heroVideo = document.querySelector('.hero-video');
 const heroVideoToggle = document.querySelector('[data-video-toggle]');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const heroSection = heroVideo?.closest('.hero-video-hero');
+if (heroSection && !reducedMotion.matches) {
+  let scrollFrame = 0;
+  const updateHeroOpacity = () => {
+    const height = Math.max(heroSection.offsetHeight, 1);
+    const progress = Math.min(1, Math.max(0, 1 - heroSection.getBoundingClientRect().bottom / height));
+    heroSection.style.setProperty('--hero-scroll-opacity', (1 - progress).toFixed(3));
+    scrollFrame = 0;
+  };
+  const scheduleHeroOpacity = () => {
+    if (!scrollFrame) scrollFrame = window.requestAnimationFrame(updateHeroOpacity);
+  };
+  window.addEventListener('scroll', scheduleHeroOpacity, { passive: true });
+  window.addEventListener('resize', scheduleHeroOpacity);
+  scheduleHeroOpacity();
+}
 const updateVideoToggle = () => {
   if (!heroVideo || !heroVideoToggle) return;
   const paused = heroVideo.paused;
@@ -97,3 +113,4 @@ const chooseExternal = (accepted) => {
 };
 document.querySelector('#accept-external')?.addEventListener('click', () => chooseExternal(true));
 document.querySelector('#reject-external')?.addEventListener('click', () => chooseExternal(false));
+

@@ -57,3 +57,5 @@
 .card-cheese .card-art img,.card-strawberry .card-art img{width:auto;height:100%;object-fit:contain}
 @media(max-width:800px){.card-cheese .card-art img,.card-strawberry .card-art img{width:100%;height:auto}}
 
+
+.hero-video-hero{opacity:var(--hero-scroll-opacity,1);transition:opacity .12s linear;will-change:opacity}
