@@ -41,8 +41,8 @@ Fuentes consultadas:
 
 ## Instagram
 
-La sección social muestra publicaciones oficiales incrustadas de @tienesgula: una publicación de tartas del 26/09/2026 y reels de fruta y açaí del 04/09/2026 y 28/08/2026. Instagram sirve la foto o el video original dentro de su reproductor; cada tarjeta enlaza también a la publicación. No se descarga ni se copia el contenido. Los embeds y Google Fonts se cargan solo después de aceptar en el aviso de privacidad; sin aceptación quedan las portadas SVG y los enlaces directos.
+La sección social muestra publicaciones oficiales incrustadas de @tienesgula: una publicación de tartas del 26/09/2026 y reels de fruta y açaí del 04/09/2026 y 28/08/2026. Instagram sirve la foto o el video original dentro de su reproductor; cada tarjeta enlaza también a la publicación. No se descarga ni se copia el contenido. Los embeds de Instagram y Google Fonts se cargan automáticamente al abrir la página.
 
 ## Privacidad
 
-No se añade analítica. Google Fonts y los embeds de Instagram solo se solicitan tras aceptar en el aviso inicial. El iframe de Google Maps solo se solicita tras interacción con «Ver mapa aquí»; el enlace externo de Google Maps siempre está disponible. Las páginas legales son plantillas y deben completarse y revisarse antes de publicar.
+No se añade analítica. Google Fonts y los embeds de Instagram se solicitan automáticamente al abrir la página. El iframe de Google Maps solo se solicita tras interacción con «Ver mapa aquí»; el enlace externo de Google Maps siempre está disponible. Las páginas legales son plantillas y deben completarse y revisarse antes de publicar.

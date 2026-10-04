@@ -80,8 +80,6 @@ document.querySelector('#contact-form')?.addEventListener('submit', (event) => {
   window.location.href = `mailto:?subject=${encodeURIComponent('Consulta para GULA')}&body=${encodeURIComponent(`Mi email: ${email}\n\n${message}\n\nDestinatario de GULA por confirmar.`)}`;
 });
 
-const consent = document.querySelector('#consent-banner');
-const externalChoice = localStorage.getItem('gula-external-consent');
 const loadInstagramPosts = () => {
   document.querySelectorAll('[data-instagram-src]').forEach((frame) => {
     if (!frame.src) frame.src = frame.dataset.instagramSrc;
@@ -104,13 +102,4 @@ const loadExternalContent = () => {
   }
   loadInstagramPosts();
 };
-if (externalChoice === 'accepted') loadExternalContent();
-else if (externalChoice !== 'rejected') consent.hidden = false;
-const chooseExternal = (accepted) => {
-  localStorage.setItem('gula-external-consent', accepted ? 'accepted' : 'rejected');
-  consent.hidden = true;
-  if (accepted) loadExternalContent();
-};
-document.querySelector('#accept-external')?.addEventListener('click', () => chooseExternal(true));
-document.querySelector('#reject-external')?.addEventListener('click', () => chooseExternal(false));
-
+loadExternalContent();
