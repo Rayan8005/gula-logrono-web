@@ -13,6 +13,22 @@ nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () =
 const heroVideo = document.querySelector('.hero-video');
 const heroVideoToggle = document.querySelector('[data-video-toggle]');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+if (heroVideo && !reducedMotion.matches) {
+  let scrollFrame = 0;
+  const updateHeroFade = () => {
+    const height = Math.max(heroVideo.parentElement.offsetHeight, 1);
+    const progress = Math.min(1, Math.max(0, 1 - heroVideo.parentElement.getBoundingClientRect().bottom / height));
+    heroVideo.parentElement.style.setProperty('--hero-scroll-opacity', (1 - progress).toFixed(3));
+    scrollFrame = 0;
+  };
+  const scheduleHeroFade = () => {
+    if (!scrollFrame) scrollFrame = window.requestAnimationFrame(updateHeroFade);
+  };
+  window.addEventListener('scroll', scheduleHeroFade, { passive: true });
+  window.addEventListener('resize', scheduleHeroFade);
+  scheduleHeroFade();
+}
 const updateVideoToggle = () => {
   if (!heroVideo || !heroVideoToggle) return;
   const paused = heroVideo.paused;
@@ -97,3 +113,5 @@ const chooseExternal = (accepted) => {
 };
 document.querySelector('#accept-external')?.addEventListener('click', () => chooseExternal(true));
 document.querySelector('#reject-external')?.addEventListener('click', () => chooseExternal(false));
+
+
